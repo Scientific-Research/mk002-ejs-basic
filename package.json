@@ -2,9 +2,19 @@
   "name": "mk002-ejs-basic",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon",
+    "start": "npm run build && node dist/server.js",
+    "build": "tsc"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts,json",
+    "exec": "npm run build && node dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +22,8 @@
   "devDependencies": {
     "nodemon": "^2.0.22",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
