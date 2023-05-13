@@ -13,19 +13,21 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./public/views"));
 
-// app.get("/", (req: express.Request, res: express.Response) => {
-//   res.send(`
-//   <h1>Home</h1>
-//   <p>go to <a href="info">info page</a></p>
-//   `);
-// });
+app.get("/", (req: express.Request, res: express.Response) => {
+  // res.send(`
+  // <h1>Home</h1>
+  // <p>go to <a href="info">info page</a></p>
+  // `);
+  res.render("index");
+});
 
-// app.get("/info", (req: express.Request, res: express.Response) => {
-//   res.send(`
-//     <h1>Info</h1>
-//     <p>go back <a href="/">home</a></p>
-//     `);
-// });
+app.get("/info", (req: express.Request, res: express.Response) => {
+  // res.send(`
+  //   <h1>Info</h1>
+  //   <p>go back <a href="/">home</a></p>
+  //   `);
+  res.render("info");
+});
 
 app.listen(port, () => {
   console.log(`now listening on http://localhost:${port}`);
