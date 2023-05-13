@@ -7,6 +7,8 @@ const __dirname = path.resolve(path.dirname(""));
 const port = 3944;
 // console.log(__dirname);
 app.use(express.static(__dirname + "/public"));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "./public/views"));
 // app.get("/", (req: express.Request, res: express.Response) => {
 //   res.send(`
 //   <h1>Home</h1>
