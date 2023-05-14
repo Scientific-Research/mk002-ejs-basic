@@ -2,7 +2,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="/css/main.css" />
   <title><%=siteData.appTitle%></title>
 </head>
 
@@ -10,16 +10,10 @@
   <!-- <h1>Book Site</h1> -->
   <h1><%=siteData.appTitle%></h1>
   <nav>
-    <% siteData.pages.forEach(page=> {%>
-        <%if(page.path===currentPath) {%>
-            <a href="<%=page.path%>" class="active">
-                <%=page.title%>
-            </a>
-        <%} else {%>
-            <a href="<%=page.path%>">
-                <%=page.title%>
-            </a>
-        <%}%>
-    <%})%>
+    <% siteData.pages.forEach(page=> {%> <%if(page.path===currentPath) {%>
+    <a href="<%=page.path%>" class="active"> <%=page.title%> </a>
+    <%} else {%>
+    <a href="<%=page.path%>"> <%=page.title%> </a>
+    <%}%> <%})%>
   </nav>
-
+</body>

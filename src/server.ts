@@ -19,7 +19,7 @@ const url = "https://edwardtanguay.vercel.app/share/techBooks.json";
 // const books = await (await fetch(url)).json;
 // ODER
 const response = await fetch(url);
-const books = await response.json();
+const books: any = await response.json();
 console.log(books);
 
 const siteData = {
@@ -45,12 +45,26 @@ app.get("/", (req: express.Request, res: express.Response) => {
   res.render("index", { siteData, currentPath: "/" });
 });
 
+// app.get("/info", (req: express.Request, res: express.Response) => {
+//   // res.send(`
+//   //   <h1>Info</h1>
+//   //   <p>go back <a href="/">home</a></p>
+//   //   `);
+//   res.render("info", { siteData, currentPath: "/info" });
+// });
+
 app.get("/info", (req: express.Request, res: express.Response) => {
-  // res.send(`
-  //   <h1>Info</h1>
-  //   <p>go back <a href="/">home</a></p>
-  //   `);
-  res.render("info", { siteData, currentPath: "/info" });
+  res.render("info", { siteData, currentPath: "/info", idCode: null });
+});
+
+app.get("/info/:idCode", (req: express.Request, res: express.Response) => {
+  const idCode = req.params.idCode;
+  res.render("info", {
+    siteData,
+    currentPath: "/info",
+    idCode,
+    book: books.find((m: any) => m.idCode === idCode),
+  });
 });
 
 app.listen(port, () => {
