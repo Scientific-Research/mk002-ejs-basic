@@ -13,7 +13,7 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./public/views"));
 
-const appTitle = "The Book Site";
+const appTitle = "The Tech Book Site";
 
 app.get("/", (req: express.Request, res: express.Response) => {
   // res.send(`
@@ -28,7 +28,7 @@ app.get("/info", (req: express.Request, res: express.Response) => {
   //   <h1>Info</h1>
   //   <p>go back <a href="/">home</a></p>
   //   `);
-  res.render("info");
+  res.render("info", { appTitle });
 });
 
 app.listen(port, () => {
