@@ -3,7 +3,7 @@
 
 import express from "express";
 import path from "path";
-import fetch from "node-fetch"; 
+import fetch from "node-fetch";
 
 const app = express();
 const __dirname = path.resolve(path.dirname(""));
@@ -34,6 +34,7 @@ const siteData = {
       path: "/info",
     },
   ],
+  books,
 };
 
 app.get("/", (req: express.Request, res: express.Response) => {

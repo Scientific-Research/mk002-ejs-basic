@@ -29,6 +29,7 @@ const siteData = {
             path: "/info",
         },
     ],
+    books,
 };
 app.get("/", (req, res) => {
     // res.send(`
