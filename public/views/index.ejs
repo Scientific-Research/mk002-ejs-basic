@@ -1,18 +1,4 @@
-<!DOCTYPE html>
- 
-<head>
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="css/main.css">
-    <title><%=appTitle%></title>
-</head>
- 
-<body>
-    <!-- <h1>Book Site</h1> -->
-    <h1><%=appTitle%></h1>
-    <p>welcome with ejs</p>
-    <p>go to the <a href="info">info page</a></p>
-</body>
- 
-</html>
+<%-include('_header.ejs')%>
+<p>welcome to ejs site!</p>
+<p>go to the <a href="info">info page</a></p>
+<%-include('_footer.ejs')%>
