@@ -9,12 +9,13 @@ const port = 3944;
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./public/views"));
+const appTitle = "The Book Site";
 app.get("/", (req, res) => {
     // res.send(`
     // <h1>Home</h1>
     // <p>go to <a href="info">info page</a></p>
     // `);
-    res.render("index");
+    res.render("index", { appTitle });
 });
 app.get("/info", (req, res) => {
     // res.send(`
