@@ -14,6 +14,9 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./public/views"));
 
 // const appTitle = "The Tech Book Site";
+const url = "https://edwardtanguay.vercel.app/share/techBooks.json";
+
+
 const siteData = {
   appTitle: "Tech Book Club",
   pages: [
