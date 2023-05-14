@@ -5,5 +5,22 @@ body {
   font-family: sans-serif;
   a {
     color: rgb(206, 206, 36);
+    padding: 0 0.15rem;
+  }
+
+  nav {
+    background-color: #222;
+    display: flex;
+    gap: 1rem;
+    padding: 0.7rem;
+    border-radius: 0.4rem;
+
+    a {
+      color: #ccc;
+      text-decoration: none;
+    }
+    a.active {
+      color: rgb(228, 228, 109);
+    }
   }
 }
